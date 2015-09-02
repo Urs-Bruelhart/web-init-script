@@ -26,4 +26,4 @@ fi
 cd $HOME/webserver
 
 # Start setup script.
-#setup/start.sh
+setup/start.sh
