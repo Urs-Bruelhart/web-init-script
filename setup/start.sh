@@ -72,14 +72,16 @@ PRIVATE_IPV6=$PRIVATE_IPV6
 CSR_COUNTRY=$CSR_COUNTRY
 EOF
 
-# Start service configuration.
+# Start system configuration.
 source setup/system.sh
-#source setup/ssl.sh
-#source setup/web.sh
 source setup/kernelhardening.sh
 
 # Setup new user and remove root login and password
 source setup/sshuser.sh
+
+# Setup the Webserver with SSL
+#source setup/ssl.sh
+#source setup/web.sh
 
 # Done.
 echo
