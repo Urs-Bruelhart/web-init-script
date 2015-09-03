@@ -25,13 +25,11 @@ export LC_TYPE=en_US.UTF-8
 
 # Put a start script in a global location. We tell the user to run 'mailinabox'
 # in the first dialog prompt, so we should do this before that starts.
-cat > /usr/local/bin/webserver << EOF
-#!/bin/bash
-cd 'pwd'
-source setup/start.sh
-EOF
-
-chmod +x /usr/local/bin/webserver
+#cat > /usr/local/bin/webserver << EOF
+#cd 'pwd'
+#source setup/start.sh
+#EOF
+#chmod +x /usr/local/bin/webserver
 
 # Ask the user for the PRIMARY_HOSTNAME, PUBLIC_IP, PUBLIC_IPV6, and CSR_COUNTRY
 # if values have not already been set in environment variables. When running
