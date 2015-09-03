@@ -1,33 +1,5 @@
 source setup/functions.sh # load our functions
 
-# Basic System Configuration
-# -------------------------
-
-# ### Add Mail-in-a-Box's PPA.
-
-# We've built several .deb packages on our own that we want to include.
-# One is a replacement for Ubuntu's stock postgrey package that makes
-# some enhancements. The other is dovecot-lucene, a Lucene-based full
-# text search plugin for (and by) dovecot, which is not available in
-# Ubuntu currently.
-#
-# Add that to the system's list of repositories using add-apt-repository.
-# But add-apt-repository may not be installed. If it's not available,
-# then install it. But we have to run apt-get update before we try to
-# install anything so the package index is up to date. After adding the
-# PPA, we have to run apt-get update *again* to load the PPA's index,
-# so this must precede the apt-get update line below.
-
-if [ ! -f /usr/bin/add-apt-repository ]; then
-	echo "Installing add-apt-repository..."
-	hide_output apt-get update
-	apt_install software-properties-common
-fi
-
-hide_output add-apt-repository -y ppa:mail-in-a-box/ppa
-
-# ### Update Packages
-
 # Update system packages to make sure we have the latest upstream versions of things from Ubuntu.
 
 echo Updating system packages...
